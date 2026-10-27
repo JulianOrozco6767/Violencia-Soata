@@ -9,6 +9,7 @@
   const overviewModal = $('overviewModal'), overviewGrid = $('overviewGrid'), closeOverview = $('closeOverview'), toast = $('toast');
   const storageKey = 'soata_violencia_slides_edits_v1';
   totalSlides.textContent = String(total).padStart(2, '0');
+  slides.forEach((slide, i) => { const n = slide.querySelector('.page-number'); if (n) n.textContent = `${String(i + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`; });
 
   function updateSlide(index) {
     if (index < 0 || index >= total) return;
